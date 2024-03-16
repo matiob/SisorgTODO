@@ -33,8 +33,10 @@ It allows you to perform the following operations:
 Once the application is running, you can perform the following operations:
 
 - Click on the "Add Task" button to add a new task to the Todo List.
-- Click on a task to view its details. You can then edit or delete the task as needed.
-- Use the filter options to filter tasks by title, status, or priority.
+- Click on a task view icon to view its details.
+- Click on a task pencil icon to edit a task as needed.
+- Click on a garbage icon to delete a task.
+- Use the search bar to filter tasks by title, status, or priority.
 - Click on the column headers to sort tasks by status, priority, or date.
 - Use the "Complete All Tasks" button to mark all tasks as completed simultaneously.
 - Use the "Delete All Tasks" button to delete all tasks from the Todo List at once.
