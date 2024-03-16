@@ -8,12 +8,7 @@ html, body {
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
-/*     font-family: "Josefin Sans", "Helvetica Neue", sans-serif;  */
-/*     background-image: url("/assets/images/bg-desktop-light.jpg"); */
     background-repeat: no-repeat;
-/*     @media screen and (max-width: 375px){
-        background-image: url("/assets/images/bg-mobile-light.jpg");        
-    } */
 }
 
 .mat-form-field-underline {
