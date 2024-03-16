@@ -1,0 +1,9 @@
+<mat-toolbar color="primary" class="navbar">
+    <h2>{{pageTitle}}</h2>
+    <span class="fill-space"></span>
+    <ul class="d-flex justify-content-end m-auto">
+        <li class="list-group-item ms-2" *ngFor="let option of menuOptions">
+            <button  mat-button [routerLink]="['/' + option | lowercase]" >{{ option }}</button >
+        </li>
+    </ul>
+</mat-toolbar>

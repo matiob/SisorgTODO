@@ -1,0 +1,110 @@
+<section class="container h-100 bg-white">
+  <div class="row pt-4">
+    <div class="col-12">
+      <div class="container bg-light py-3 rounded">
+        <div class="row">
+          <div class="col text-center mb-3">
+            <h4>Task Form</h4>
+          </div>
+        </div>
+        <form [formGroup]="taskForm" (ngSubmit)="submitTask()">
+          <div class="form-group">
+            <label for="inputTaskTitle">Title</label>
+            <input
+              formControlName="title"
+              id="inputTaskTitle"
+              type="text"
+              class="form-control mb-2"
+              placeholder="Title"
+              [ngClass]="{
+                'form-control': true,
+                'input-not-valid':
+                  !taskForm.controls['title'].valid &&
+                  taskForm.controls['title'].touched
+              }"
+            />
+            <small
+              id="titleRequiredErrorMessage"
+              class="form-text text-muted error-message"
+              *ngIf="
+                !taskForm.controls['title'].valid &&
+                taskForm.controls['title'].touched &&
+                taskForm.controls['title'].getError('required')
+              "
+            >
+              Task title is required
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="taskDescription">Description</label>
+            <textarea
+            formControlName="description"
+            class="form-control"
+            placeholder="Description"
+            id="taskDescription"
+            rows="3"
+            [ngClass]="{
+              'form-control': true,
+              'input-not-valid':
+                !taskForm.controls['description'].valid &&
+                taskForm.controls['description'].touched
+            }"
+          ></textarea>
+          <small
+            id="descriptionRequiredErrorMessage"
+            class="form-text text-muted error-message"
+            *ngIf="
+              !taskForm.controls['description'].valid &&
+              taskForm.controls['description'].touched &&
+              taskForm.controls['description'].getError('required')
+            "
+          >
+            Task description is required
+          </small>
+          </div>
+
+          <div class="form-group">
+            <div class="row justify-content-center">
+              <ng-container *ngFor="let status of ['New', 'In progress', 'Completed']">
+                <div class="col-auto mt-2">
+                  <div class="form-check">
+                    <input
+                      formControlName="status"
+                      class="form-check-input"
+                      type="radio"
+                      [id]="'status' + status"
+                      [value]="status"
+                    />
+                    <label class="form-check-label" [for]="'status' + status">{{ status }}</label>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          
+          
+
+          <div class="form-group">
+            <label for="priority">Priority</label>
+            <select
+              formControlName="priority"
+              class="form-control"
+              id="priority"
+            >
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+
+          <div class="text-center mt-2">
+            <button mat-raised-button type="submit" color="primary" [disabled]="!taskForm.valid">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

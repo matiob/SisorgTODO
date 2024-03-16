@@ -1,0 +1,48 @@
+.task-table {
+    width: 100%;
+  }
+  
+  .mat-column-title {
+    padding-left: 16px;
+    font-size: 20px;
+    width: 32px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+  }
+  
+  .mat-column-description {
+    padding-left: 16px;
+    font-size: 16px;
+  }
+  
+  .mat-column-status {
+    font-style: italic;
+    width: 105px;
+  }
+  
+  .mat-column-priority {
+    width: 105px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .mat-column-date {
+    width: 32px;
+    text-align: center;
+  }
+
+  .mat-column-actions {
+    width: 32px;
+    text-align: center;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-align {
+    margin-left: 4px; 
+    vertical-align: middle;
+  }
