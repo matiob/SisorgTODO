@@ -1,0 +1,33 @@
+{
+  "source": {
+    "include": ["src"],
+    "exclude": ["node_modules", "dist"],
+    "includePattern": ".+\\.ts$",
+    "excludePattern": "(node_modules|docs)"
+  },
+  "opts": {
+    "recurse": true,
+    "destination": "docs/",
+    "readme": "./README.md",
+    "encoding": "utf8",
+    "verbose": true,
+    "theme_opts": {
+      "default_theme": "dark",
+      "search": true,
+      "title": "Test",
+      "homepageTitle": "Docs"
+    }
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true
+    }
+  },
+  "markdown": {
+    "hardwrap": false,
+    "idInHeadings": true
+  }
+}

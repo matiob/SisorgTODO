@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ActivatedRoute } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { of } from 'rxjs';
 import { TaskFormComponent } from './task-form.component';
 
 describe('TaskFormComponent', () => {
@@ -8,7 +10,16 @@ describe('TaskFormComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TaskFormComponent]
+      declarations: [TaskFormComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            paramMap: of({ get: () => '1' })
+          }
+        }
+      ],
+      imports: [ReactiveFormsModule]
     });
     fixture = TestBed.createComponent(TaskFormComponent);
     component = fixture.componentInstance;

@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search.component';
 
 describe('SearchComponent', () => {
@@ -8,7 +11,13 @@ describe('SearchComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SearchComponent]
+      declarations: [SearchComponent],
+      imports: [
+        FormsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        BrowserAnimationsModule
+      ]
     });
     fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
